@@ -29,9 +29,8 @@ public class Berth {
     public Berth() {
     }
 
-    public Berth(Station station, Long id, Ship docked_ship) {
+    public Berth(Station station, Ship docked_ship) {
         this.station = station;
-        this.id = id;
         this.docked_ship = docked_ship;
     }
 
