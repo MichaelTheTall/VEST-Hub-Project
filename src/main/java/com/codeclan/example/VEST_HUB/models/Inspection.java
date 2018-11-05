@@ -10,7 +10,7 @@ public class Inspection {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @JsonIgnore
     @ManyToOne
@@ -34,11 +34,11 @@ public class Inspection {
         this.date = date;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

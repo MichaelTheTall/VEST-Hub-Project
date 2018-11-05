@@ -14,7 +14,7 @@ public class Berth {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @JsonIgnore
     @ManyToOne
@@ -29,7 +29,7 @@ public class Berth {
     public Berth() {
     }
 
-    public Berth(Station station, int id, Ship docked_ship) {
+    public Berth(Station station, Long id, Ship docked_ship) {
         this.station = station;
         this.id = id;
         this.docked_ship = docked_ship;
@@ -43,11 +43,11 @@ public class Berth {
         this.docked_ship = docked_ship;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

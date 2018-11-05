@@ -1,4 +1,7 @@
 package com.codeclan.example.VEST_HUB.repositories.BerthRepository;
 
-public class BerthRepositoryImpl {
+public class BerthRepositoryImpl implements BerthRepositoryCustom {
+
+
+
 }
