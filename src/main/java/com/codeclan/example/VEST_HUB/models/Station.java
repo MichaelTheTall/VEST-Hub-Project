@@ -1,6 +1,10 @@
 package com.codeclan.example.VEST_HUB.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.List;
 
@@ -8,13 +12,46 @@ import java.util.List;
 @Table(name = "station")
 public class Station {
 
+    @Column(name = "name")
+    private String name;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "berth")
     private List<Berth> berthList;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "passenger")
     private List<Passenger> station_passengers;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "dock_officer")
     private List<DockOfficer> station_dock_officers;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "ship")
+    private List<Ship> previous_ships;
+
     public Station() {
+    }
+
+    public Station(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Ship> getPrevious_ships() {
+        return previous_ships;
+    }
+
+    public void setPrevious_ships(List<Ship> previous_ships) {
+        this.previous_ships = previous_ships;
     }
 
     public List<Berth> getBerthList() {

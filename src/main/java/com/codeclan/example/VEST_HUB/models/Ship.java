@@ -1,15 +1,36 @@
 package com.codeclan.example.VEST_HUB.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "ships")
 public class Ship {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "ship_id", nullable = false)
     private int id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "capacity")
     private int capacity;
+
+    @Column(name = "origin")
     private String origin;
+
+    @Column(name = "destination")
     private String destination;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "passenger")
     private List<Passenger> passengerList;
 
 

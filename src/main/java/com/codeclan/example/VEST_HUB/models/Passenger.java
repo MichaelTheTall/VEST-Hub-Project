@@ -1,8 +1,22 @@
 package com.codeclan.example.VEST_HUB.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "passengers")
 public class Passenger {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "passenger_id", nullable = false)
     private int id;
+
+    @Column(name = "name")
     private String name;
 
 
