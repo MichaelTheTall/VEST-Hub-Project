@@ -18,12 +18,12 @@ public class Passenger {
 
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "passenger_id")
+    @JoinColumn(name = "ship_id")
     private Ship ship;
 
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "passenger_id")
+    @JoinColumn(name = "station_id")
     private Station station;
 
     public Passenger() {

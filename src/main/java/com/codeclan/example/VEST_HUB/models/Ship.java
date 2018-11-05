@@ -28,16 +28,15 @@ public class Ship {
 
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "ship_id")
+    @JoinColumn(name = "station_id")
     private Station station;
 
     @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "ship_id")
-    private DockOfficer dockOfficer;
+    @OneToMany(mappedBy = "ship")
+    private List<Inspection> inspectionList;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "passenger")
+    @OneToMany(mappedBy = "ship")
     private List<Passenger> passengerList;
 
 
@@ -50,6 +49,7 @@ public class Ship {
         this.origin = origin;
         this.destination = destination;
         this.passengerList = new ArrayList<>();
+        this.inspectionList = new ArrayList<>();
     }
 
 
@@ -109,11 +109,11 @@ public class Ship {
         this.station = station;
     }
 
-    public DockOfficer getDockOfficer() {
-        return dockOfficer;
+    public List<Inspection> getInspectionList() {
+        return inspectionList;
     }
 
-    public void setDockOfficer(DockOfficer dockOfficer) {
-        this.dockOfficer = dockOfficer;
+    public void setInspectionList(List<Inspection> inspectionList) {
+        this.inspectionList = inspectionList;
     }
 }

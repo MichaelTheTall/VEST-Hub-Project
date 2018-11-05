@@ -17,19 +17,19 @@ public class Station {
     private String name;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "berth")
+    @OneToMany(mappedBy = "station")
     private List<Berth> berthList;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "passenger")
+    @OneToMany(mappedBy = "station")
     private List<Passenger> station_passengers;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "dock_officer")
+    @OneToMany(mappedBy = "station")
     private List<DockOfficer> station_dock_officers;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "ship")
+    @OneToMany(mappedBy = "station")
     private List<Ship> previous_ships;
 
     public Station() {

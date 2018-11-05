@@ -16,12 +16,14 @@ public class Berth {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "docked_ship")
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "ship_id")
     private Ship docked_ship;
 
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "berth_id", nullable = false)
+    @JoinColumn(name = "station_id", nullable = false)
     private Station station;
 
     public Berth() {

@@ -13,11 +13,13 @@ public class Inspection {
     private int id;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "ship")
+    @ManyToOne
+    @JoinColumn(name = "ship_id")
     private Ship ship;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "dock_officer")
+    @ManyToOne
+    @JoinColumn(name = "dock_officer_id")
     private DockOfficer dockOfficer;
 
     @Column(name = "date")
