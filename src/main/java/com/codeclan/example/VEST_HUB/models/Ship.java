@@ -13,6 +13,9 @@ public class Ship {
     private List<Passenger> passengerList;
 
 
+    public Ship() {
+    }
+
     public Ship(String name, int capacity, String origin, String destination) {
         this.name = name;
         this.capacity = capacity;

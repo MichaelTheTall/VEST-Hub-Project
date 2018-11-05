@@ -9,6 +9,9 @@ public class Berth {
     private Ship docked_ship;
     private List<Passenger> berth_passengerList;
 
+    public Berth() {
+    }
+
     public Berth(int number, Ship docked_ship) {
         this.number = number;
         this.docked_ship = docked_ship;

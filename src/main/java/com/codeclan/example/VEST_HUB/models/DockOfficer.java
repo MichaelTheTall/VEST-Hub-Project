@@ -10,6 +10,9 @@ public class DockOfficer {
     private String name;
     private List<Ship> inspected;
 
+    public DockOfficer() {
+    }
+
     public DockOfficer(String name) {
         this.name = name;
         this.inspected = new ArrayList<>();
