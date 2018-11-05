@@ -12,9 +12,6 @@ public class Ship {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "ship_id", nullable = false)
     private int id;
 
     @Column(name = "name")
@@ -28,6 +25,16 @@ public class Ship {
 
     @Column(name = "destination")
     private String destination;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "ship_id")
+    private Station station;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "ship_id")
+    private DockOfficer dockOfficer;
 
     @JsonIgnore
     @OneToMany(mappedBy = "passenger")
@@ -94,6 +101,19 @@ public class Ship {
         this.passengerList = passengerList;
     }
 
+    public Station getStation() {
+        return station;
+    }
 
+    public void setStation(Station station) {
+        this.station = station;
+    }
 
+    public DockOfficer getDockOfficer() {
+        return dockOfficer;
+    }
+
+    public void setDockOfficer(DockOfficer dockOfficer) {
+        this.dockOfficer = dockOfficer;
+    }
 }

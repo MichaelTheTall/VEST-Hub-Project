@@ -11,14 +11,20 @@ public class Passenger {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "passenger_id", nullable = false)
     private int id;
 
     @Column(name = "name")
     private String name;
 
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "passenger_id")
+    private Ship ship;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "passenger_id")
+    private Station station;
 
     public Passenger() {
     }
@@ -43,6 +49,19 @@ public class Passenger {
         this.name = name;
     }
 
+    public Ship getShip() {
+        return ship;
+    }
 
+    public void setShip(Ship ship) {
+        this.ship = ship;
+    }
 
+    public Station getStation() {
+        return station;
+    }
+
+    public void setStation(Station station) {
+        this.station = station;
+    }
 }

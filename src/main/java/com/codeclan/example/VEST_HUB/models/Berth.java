@@ -1,6 +1,7 @@
 package com.codeclan.example.VEST_HUB.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,30 +12,25 @@ import java.util.List;
 @Table(name = "berths")
 public class Berth {
 
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "berth_number", nullable = false)
-    private int number;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     @Column(name = "docked_ship")
     private Ship docked_ship;
-//    private List<Passenger> berth_passengerList;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "berth_id", nullable = false)
+    private Station station;
 
     public Berth() {
     }
 
-    public Berth(int number, Ship docked_ship) {
-        this.number = number;
+    public Berth(Station station, int id, Ship docked_ship) {
+        this.station = station;
+        this.id = id;
         this.docked_ship = docked_ship;
-//        this.berth_passengerList = new ArrayList<>();
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
     }
 
     public Ship getDocked_ship() {
@@ -45,14 +41,19 @@ public class Berth {
         this.docked_ship = docked_ship;
     }
 
-//    public List<Passenger> getBerth_passengerList() {
-//        return berth_passengerList;
-//    }
-//
-//    public void setBerth_passengerList(List<Passenger> berth_passengerList) {
-//        this.berth_passengerList = berth_passengerList;
-//    }
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
+    public Station getStation() {
+        return station;
+    }
 
+    public void setStation(Station station) {
+        this.station = station;
+    }
 }
