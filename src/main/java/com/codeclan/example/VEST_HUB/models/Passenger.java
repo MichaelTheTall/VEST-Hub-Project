@@ -64,4 +64,5 @@ public class Passenger {
     public void setStation(Station station) {
         this.station = station;
     }
+
 }

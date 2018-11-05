@@ -29,9 +29,9 @@ public class Berth {
     public Berth() {
     }
 
-    public Berth(Station station, Ship docked_ship) {
+    public Berth(Station station) {
         this.station = station;
-        this.docked_ship = docked_ship;
+        this.docked_ship = null;
     }
 
     public Ship getDocked_ship() {
@@ -57,4 +57,23 @@ public class Berth {
     public void setStation(Station station) {
         this.station = station;
     }
+
+    public void dock(Ship ship){
+        setDocked_ship(ship);
+        ship.setStation(this.station);
+        ship.setBerth(this.id);
+        ship.setInspected(false);
+    }
+
+    public String launch(){
+        String name = docked_ship.getName();
+        if (docked_ship.isInspected()) {
+            this.docked_ship.setBerth(null);
+            this.docked_ship = null;
+            return name + " launched!";
+        } else {
+            return name + " cannot launch without an inspection!";
+        }
+    }
+
 }

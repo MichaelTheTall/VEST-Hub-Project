@@ -32,6 +32,7 @@ public class Inspection {
         this.ship = ship;
         this.dockOfficer = dockOfficer;
         this.date = date;
+        this.ship.setInspected(true);
     }
 
     public Long getId() {

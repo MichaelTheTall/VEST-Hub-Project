@@ -26,6 +26,12 @@ public class Ship {
     @Column(name = "destination")
     private String destination;
 
+    @Column(name = "berth")
+    private Long berth;
+
+    @Column(name = "inspected")
+    private boolean inspected;
+
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "station_id")
@@ -39,7 +45,6 @@ public class Ship {
     @OneToMany(mappedBy = "ship")
     private List<Passenger> passengerList;
 
-
     public Ship() {
     }
 
@@ -48,6 +53,9 @@ public class Ship {
         this.capacity = capacity;
         this.origin = origin;
         this.destination = destination;
+        this.station = null;
+        this.berth = null;
+        this.inspected = false;
         this.passengerList = new ArrayList<>();
         this.inspectionList = new ArrayList<>();
     }
@@ -116,4 +124,33 @@ public class Ship {
     public void setInspectionList(List<Inspection> inspectionList) {
         this.inspectionList = inspectionList;
     }
+
+    public Long getBerth() {
+        return berth;
+    }
+
+    public void setBerth(Long berth) {
+        this.berth = berth;
+    }
+
+    public void setInspected(boolean b) {
+        this.inspected = b;
+    }
+
+    public boolean isInspected() {
+        return inspected;
+    }
+
+    public void addPass(Passenger passenger){
+        passengerList.add(passenger);
+        passenger.setShip(this);
+        passenger.setStation(null);
+    }
+
+    public void removePass(Passenger passenger){
+        passengerList.remove(passenger);
+        passenger.setShip(null);
+        passenger.setStation(this.station);
+    }
+
 }
