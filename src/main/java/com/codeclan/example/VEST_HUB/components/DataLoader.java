@@ -80,9 +80,9 @@ public class DataLoader implements ApplicationRunner {
         passengerRepository.save(p11);
         passengerRepository.save(p12);
 
-        Ship ship1 = new Ship("SS Argo", 20, "Ceres", "Mars");
-        Ship ship2 = new Ship("SS Pigmalion", 40, "Luna", "Pluto");
-        Ship ship3 = new Ship("SS Empty", 10, "Earth", "Saturn");
+        Ship ship1 = new Ship("UNSC Argonaut", 20, "Ceres", "Mars");
+        Ship ship2 = new Ship("HMSS Pigmalion", 40, "Luna", "Pluto");
+        Ship ship3 = new Ship("TFSS Segmentus", 10, "Earth", "Saturn");
         ship1.addPass(p1);
         ship1.addPass(p2);
         ship1.addPass(p3);
@@ -104,8 +104,8 @@ public class DataLoader implements ApplicationRunner {
         passengerRepository.save(p7);
         passengerRepository.save(p8);
 
-        DockOfficer d1 = new DockOfficer("DO Hendriksson", station);
-        DockOfficer d2 = new DockOfficer("DO Smith", station);
+        DockOfficer d1 = new DockOfficer("DO Hendriksson");
+        DockOfficer d2 = new DockOfficer("DO Smith");
         dockOfficerRepository.save(d1);
         dockOfficerRepository.save(d2);
 
@@ -113,15 +113,32 @@ public class DataLoader implements ApplicationRunner {
         Berth b1 = new Berth(station);
         Berth b2 = new Berth(station);
         Berth b3 = new Berth(station);
+        Berth b4 = new Berth(station);
+        Berth b5 = new Berth(station);
+        Berth b6 = new Berth(station);
+        Berth b7 = new Berth(station);
+        Berth b8 = new Berth(station);
+        Berth b9 = new Berth(station);
+        Berth b10 = new Berth(station);
+        Berth b11 = new Berth(station);
+        Berth b12 = new Berth(station);
         berthRepository.save(b1);
         berthRepository.save(b2);
         berthRepository.save(b3);
+        berthRepository.save(b4);
+        berthRepository.save(b5);
+        berthRepository.save(b6);
+        berthRepository.save(b7);
+        berthRepository.save(b8);
+        berthRepository.save(b9);
+        berthRepository.save(b10);
+        berthRepository.save(b11);
+        berthRepository.save(b12);
         b1.dock(ship2);
         b2.dock(ship1);
 
         berthRepository.save(b1);
         berthRepository.save(b2);
-        berthRepository.save(b3);
 
         shipRepository.save(ship1);
         shipRepository.save(ship2);

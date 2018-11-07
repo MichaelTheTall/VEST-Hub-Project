@@ -26,10 +26,6 @@ public class Station {
 
     @JsonIgnore
     @OneToMany(mappedBy = "station")
-    private List<DockOfficer> station_dock_officers;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "station")
     private List<Ship> previous_ships;
 
     public Station() {
@@ -79,11 +75,4 @@ public class Station {
         this.station_passengers = station_passengers;
     }
 
-    public List<DockOfficer> getStation_dock_officers() {
-        return station_dock_officers;
-    }
-
-    public void setStation_dock_officers(List<DockOfficer> station_dock_officers) {
-        this.station_dock_officers = station_dock_officers;
-    }
 }

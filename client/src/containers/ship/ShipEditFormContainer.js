@@ -20,7 +20,7 @@ class ShipEditFormContainer extends Component {
     if(!this.state.ship){
       return null;
     }
-    return <ShipEditForm handleShipEdit= {this.handleShipEdit} />
+    return <ShipEditForm ship = {this.state.ship} handleShipEdit= {this.handleShipEdit} />
 
   }
 }

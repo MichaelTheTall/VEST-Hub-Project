@@ -18,20 +18,14 @@ public class DockOfficer {
     private String name;
 
     @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "station_id")
-    private Station station;
-
-    @JsonIgnore
     @OneToMany(mappedBy = "dockOfficer")
     private List<Inspection> inspectionList;
 
     public DockOfficer() {
     }
 
-    public DockOfficer(String name, Station station) {
+    public DockOfficer(String name) {
         this.name = name;
-        this.station = station;
         this.inspectionList = new ArrayList<>();
     }
 
@@ -49,15 +43,6 @@ public class DockOfficer {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-
-    public Station getStation() {
-        return station;
-    }
-
-    public void setStation(Station station) {
-        this.station = station;
     }
 
     public List<Inspection> getInspectionList() {

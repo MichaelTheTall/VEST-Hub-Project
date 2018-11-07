@@ -5,20 +5,32 @@ import Request from '../../helpers/request.js';
 class BerthListContainer extends Component {
   constructor(props){
     super(props);
-    this.state = {berths: []}
+    this.state = {
+      emptyberths: [],
+      fullberths: []
+    }
   }
 
   componentDidMount(){
-    let request = new Request()
-    request.get('/berths').then((data) => {
-      this.setState({berths: data._embedded.berths})
+    let emptyRequest = new Request()
+    emptyRequest.get('/berths/empty').then((data) => {
+      this.setState({emptyberths: data})
+    })
+    let fullRequest = new Request()
+    fullRequest.get('/berths/full').then((data) => {
+      this.setState({fullberths: data})
     })
   }
 
 
   render(){
     return (
-     <BerthList berths = {this.state.berths} />
+      <div>
+        <h4>Occupied Berths:</h4>
+        <BerthList berths = {this.state.fullberths} />
+        <h4>Free Berths:</h4>
+        <BerthList berths = {this.state.emptyberths} />
+      </div>
     )
   }
 }
