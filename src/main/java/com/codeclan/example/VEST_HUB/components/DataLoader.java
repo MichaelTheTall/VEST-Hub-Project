@@ -82,6 +82,7 @@ public class DataLoader implements ApplicationRunner {
 
         Ship ship1 = new Ship("SS Argo", 20, "Ceres", "Mars");
         Ship ship2 = new Ship("SS Pigmalion", 40, "Luna", "Pluto");
+        Ship ship3 = new Ship("SS Empty", 10, "Earth", "Saturn");
         ship1.addPass(p1);
         ship1.addPass(p2);
         ship1.addPass(p3);
@@ -92,6 +93,7 @@ public class DataLoader implements ApplicationRunner {
         ship2.addPass(p8);
         shipRepository.save(ship1);
         shipRepository.save(ship2);
+        shipRepository.save(ship3);
 
         passengerRepository.save(p1);
         passengerRepository.save(p2);
