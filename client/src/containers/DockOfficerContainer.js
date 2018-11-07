@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import DockOfficerList from '../components/DockOfficerList.js';
-import InspectionList from '../components/InspectionList.js';
+import DockOfficerList from '../components/dockofficer/DockOfficerList.js';
+import InspectionList from '../components/inspection/InspectionList.js';
 import Request from '../helpers/request.js';
 
 class DockOfficerContainer extends Component {

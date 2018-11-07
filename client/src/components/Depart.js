@@ -1,5 +1,5 @@
 import React from 'react';
-import Ship from './Ship.js';
+import Ship from './ship/Ship.js';
 
 
 const Depart = (props) => {

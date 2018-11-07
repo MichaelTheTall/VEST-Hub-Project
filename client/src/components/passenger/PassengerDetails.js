@@ -12,7 +12,6 @@ const PassengerDetails = (props) => {
 
   return (
     <React.Fragment>
-        <p>Name</p>
     <button onClick={onEdit}>Edit Passenger</button>
     <button onClick={onDelete}>Delete Passenger</button>
     </React.Fragment>

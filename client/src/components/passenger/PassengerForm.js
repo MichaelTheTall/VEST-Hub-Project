@@ -6,23 +6,17 @@ const PassengerForm = (props) => {
     event.preventDefault();
     const passenger = {
         "name": event.target.name.value,
-        "ship": event.target.ship.value
+        "station": "http://localhost:8080/stations/1"
       }
     props.handlePassengerPost(passenger)
 
   }
 
-    const shipOptions = props.ships.map((ship, index) => {
-      return <option key={index} value={ship._links.self.href}>{ship.name}</option>
-    })
-
       return (
         <div>
+          <h4>Add a New Passenger</h4>
           <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Name" name="name"/>
-            <select name="ship">
-              {shipOptions}
-            </select>
+            <input type="text" placeholder="Passenger Name" name="name"/>
             <button type="submit">Save</button>
           </form>
         </div>

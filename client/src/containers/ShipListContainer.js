@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ShipList from '../components/ShipList.js';
+import ShipList from '../components/ship/ShipList.js';
 import Request from '../helpers/request.js';
 
 class ShipListContainer extends Component {

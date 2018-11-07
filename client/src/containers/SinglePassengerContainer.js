@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Passenger from '../components/Passenger.js';
-import PassengerDetails from '../components/PassengerDetails.js';
+import Passenger from '../components/passenger/Passenger.js';
+import PassengerDetails from '../components/passenger/PassengerDetails.js';
 import Request from '../helpers/request.js';
 
 class SinglePassengerContainer extends Component {

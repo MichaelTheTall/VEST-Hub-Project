@@ -26,7 +26,7 @@ class Main extends Component {
           <Route exact path="/berths" component={BerthListContainer} />
           <Switch>
           <Route exact path="/passengers" component={PassengerContainer} />
-          <Route exact path = '/passengers/new' component={PassengerFormContainer}/>
+          <Route exact path="/passengers/new" component={PassengerFormContainer}/>
           <Route exact path="/passengers/edit/:id" render = {(props) =>{
             const id = props.match.params.id;
             return <PassengerEditFormContainer id = {id} />
