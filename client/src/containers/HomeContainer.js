@@ -15,11 +15,11 @@ class HomeContainer extends Component {
   componentDidMount(){
     let arriveRequest = new Request()
     arriveRequest.get('/ships/arrivals').then((data) => {
-      this.setState({arrivals: data._embedded.ships})
+      this.setState({arrivals: data})
     })
     let departRequest = new Request()
     departRequest.get('/ships/departures').then((data) => {
-      this.setState({departures: data._embedded.ships})
+      this.setState({departures: data})
     })
   }
 
