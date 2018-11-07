@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 const Ship = (props) => {
 
   var inspected;
-  
+
   if(props.ship.inspected){
     inspected = "Y";
   } else {
@@ -17,9 +17,10 @@ const Ship = (props) => {
 
   return (
     <React.Fragment>
-        <Link to = {"/ships/" + props.ship.id} className="name">
+        <Link to = {"/ships/" + props.ship.index} className="name">
           {props.ship.name}
         </Link>
+        <p>{props.ship.index}</p>
       <p>Capacity: {props.ship.capacity}</p>
       <p>Berth: {props.ship.berth}</p>
       <p>Origin: {props.ship.origin}</p>

@@ -1,10 +1,20 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 
-const Passengers = () => (
-  <div>
-    <h4>Passengers</h4>
-    <p>PASSENGER PAGE PLACEHOLDER</p>
-  </div>
-);
+const Passenger = (props) => {
 
-export default Passengers;
+  if(!props.passenger){
+    return null;
+  }
+
+  return (
+    <React.Fragment>
+        {/* <Link to = {"/passengers/" + props.passenger.id} className="name">
+          {props.passenger.name}
+        </Link> */}
+        <p>ID: {props.passenger._links.self.href}</p>
+        <p>Name: {props.passenger.name}</p>
+      </React.Fragment>
+  )
+}
+export default Passenger;
