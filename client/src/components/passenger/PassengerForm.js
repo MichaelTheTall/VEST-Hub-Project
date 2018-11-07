@@ -5,8 +5,7 @@ const PassengerForm = (props) => {
   function handleSubmit(event){
     event.preventDefault();
     const passenger = {
-        "name": event.target.name.value,
-        "station_id": 1
+        "name": event.target.name.value
       }
     props.handlePassengerPost(passenger)
 

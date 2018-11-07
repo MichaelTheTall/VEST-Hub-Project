@@ -13,7 +13,7 @@ class SinglePassengerContainer extends Component {
 
   componentDidMount(){
     let request = new Request()
-    const url = '/passengers/' + this.props.id + '?projection=embedShip';
+    const url = '/passengers/' + this.props.id;
     request.get(url).then((data) => {
       this.setState({passenger: data})
     })

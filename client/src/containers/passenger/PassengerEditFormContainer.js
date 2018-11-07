@@ -11,9 +11,6 @@ class PassengerEditFormContainer extends Component {
 
   componentDidMount(){
     const request = new Request();
-    request.get("/ships").then((ships) => {
-      this.setState({ships: ships._embedded.ships})
-    });
     request.get("/passengers/" + this.props.id + "?projection=embedShip").then((passenger) => {
       this.setState({passenger: passenger})
     });
@@ -27,10 +24,10 @@ class PassengerEditFormContainer extends Component {
   }
 
   render(){
-    if(!this.state.ships || !this.state.passenger){
+    if(!this.state.passenger){
       return null;
     }
-    return <PassengerEditForm ships = {this.state.ships} passenger={this.state.passenger} handlePassengerEdit= {this.handlePassengerEdit} />
+    return <PassengerEditForm passenger={this.state.passenger} handlePassengerEdit= {this.handlePassengerEdit} />
 
   }
 }
