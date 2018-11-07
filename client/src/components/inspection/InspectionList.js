@@ -1,5 +1,6 @@
 import React from 'react';
 import Inspection from './Inspection.js';
+import {Link} from 'react-router-dom';
 
 
 const InspectionList = (props) => {
@@ -14,9 +15,12 @@ const InspectionList = (props) => {
 		})
 
 	return (
-		<ul className="component-list">
-	    {inspections}
-	  </ul>
+		<div>
+			<Link to="/inspections/new">Add New Inspection</Link>
+			<ul className="component-list">
+	    		{inspections}
+	  		</ul>
+		</div>
 
 	)
 }

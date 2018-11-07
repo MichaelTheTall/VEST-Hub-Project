@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Request from '../helpers/request';
-import PassengerForm from '../components/passenger/PassengerForm.js'
+import Request from '../../helpers/request';
+import PassengerForm from '../../components/passenger/PassengerForm.js'
 
 class PassengerFormContainer extends Component {
   constructor(props){

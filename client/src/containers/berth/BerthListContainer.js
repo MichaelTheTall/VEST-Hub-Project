@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import BerthList from '../components/berth/BerthList.js';
-import Request from '../helpers/request.js';
+import BerthList from '../../components/berth/BerthList.js';
+import Request from '../../helpers/request.js';
 
 class BerthListContainer extends Component {
   constructor(props){

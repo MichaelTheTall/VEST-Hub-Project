@@ -6,10 +6,6 @@ const InspectionDetails = (props) => {
     props.handleDelete(props.inspections.id);
   }
 
-  const onEdit = () => {
-    props.handleEdit(props.inspections.id)
-  }
-
   return (
     <React.Fragment>
     <button onClick={onDelete}>Delete Inspection</button>
