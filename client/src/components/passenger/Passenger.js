@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const Passenger = (props) => {
 
@@ -16,10 +17,11 @@ const Passenger = (props) => {
 
   return (
     <React.Fragment>
-        <p>ID: {props.passenger.key}</p>
-        <p>Name: {props.passenger.name}</p>
-        <p>Status: {aboard}</p>
-      </React.Fragment>
+      <p>ID: {props.passenger.id}</p>
+      <p>Name: <Link to = {"/passengers/" + props.passenger.id} className="name">
+        {props.passenger.name}</Link></p>
+      <p>Status: {aboard}</p>
+    </React.Fragment>
   )
 }
 export default Passenger;

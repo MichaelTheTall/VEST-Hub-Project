@@ -26,7 +26,7 @@ const Ship = (props) => {
   
   return (
     <React.Fragment>
-        <Link to = {"/ships/" + props.ship.index} className="name">
+        <Link to = {"/ships/" + props.ship.id} className="name">
           {props.ship.name}
         </Link>
         <p>{props.ship.index}</p>

@@ -8,7 +8,7 @@ const DockOfficer = (props) => {
 
   return (
     <React.Fragment>
-        <p>ID: {props.dockofficer._links.self.href}</p>
+        <p>ID: {props.dockofficer.id}</p>
         <p>Name: {props.dockofficer.name}</p>
       </React.Fragment>
   )

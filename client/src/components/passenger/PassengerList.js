@@ -1,5 +1,6 @@
 import React from 'react';
 import Passenger from './Passenger.js';
+import {Link} from 'react-router-dom';
 
 
 const PassengerList = (props) => {
@@ -14,9 +15,12 @@ const PassengerList = (props) => {
 		})
 
 	return (
-		<ul className="component-list">
-	    {passengers}
-	  </ul>
+		<div>
+			<Link to="/passengers/new">Add New Passenger</Link>
+			<ul className="component-list">
+	    		{passengers}
+	  		</ul>
+		</div>
 
 	)
 }
