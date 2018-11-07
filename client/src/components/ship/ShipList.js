@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import Ship from './Ship.js';
 
 
@@ -14,9 +15,12 @@ const ShipList = (props) => {
 		})
 
 	return (
-		<ul className="component-list">
-	    {ships}
-	  </ul>
+		<div>
+			<Link to="/ships/new">Add New Ship</Link>
+			<ul className="component-list">
+	    		{ships}
+	  		</ul>
+		</div>
 
 	)
 }

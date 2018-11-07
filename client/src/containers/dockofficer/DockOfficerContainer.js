@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
 import DockOfficerList from '../../components/dockofficer/DockOfficerList.js';
-import InspectionList from '../../components/inspection/InspectionList.js';
 import Request from '../../helpers/request.js';
 
 class DockOfficerContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      dockofficers: [],
-      inspections: []
+      dockofficers: []
     }
   }
 
@@ -17,10 +15,6 @@ class DockOfficerContainer extends Component {
     doRequest.get('/dockOfficers').then((data) => {
       this.setState({dockofficers: data._embedded.dockOfficers})
     })
-    let inRequest = new Request()
-    inRequest.get('/inspections').then((data) => {
-      this.setState({inspections: data._embedded.inspections})
-    })
   }
 
 
@@ -28,7 +22,6 @@ class DockOfficerContainer extends Component {
     return (
       <div>
         <DockOfficerList dockofficers = {this.state.dockofficers} />
-        <InspectionList inspections = {this.state.inspections} />
       </div>
     )
   }

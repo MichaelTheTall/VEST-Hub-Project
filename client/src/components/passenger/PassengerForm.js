@@ -6,7 +6,7 @@ const PassengerForm = (props) => {
     event.preventDefault();
     const passenger = {
         "name": event.target.name.value,
-        "station": "http://localhost:8080/stations/1"
+        "station_id": 1
       }
     props.handlePassengerPost(passenger)
 

@@ -21,6 +21,9 @@ const Navbar = () => (
     <li>
       <Link to="/dockOfficers">Dock Officers</Link>
     </li>
+    <li>
+      <Link to="/inspections">Inspections</Link>
+    </li>
   </ul>
 );
 

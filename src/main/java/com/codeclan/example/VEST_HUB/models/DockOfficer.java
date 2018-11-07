@@ -19,7 +19,7 @@ public class DockOfficer {
 
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "station_id", nullable = false)
+    @JoinColumn(name = "station_id")
     private Station station;
 
     @JsonIgnore

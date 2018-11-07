@@ -13,6 +13,12 @@ import PassengerEditFormContainer from "./containers/passenger/PassengerEditForm
 import DockOfficerFormContainer from "./containers/dockofficer/DockOfficerFormContainer";
 import DockOfficerEditFormContainer from "./containers/dockofficer/DockOfficerEditFormContainer";
 import SingleDockOfficerContainer from "./containers/dockofficer/SingleDockOfficerContainer";
+import InspectionContainer from "./containers/inspection/InspectionContainer";
+import InspectionFormContainer from "./containers/inspection/InspectionFormContainer";
+import SingleInspectionContainer from "./containers/inspection/SingleInspectionContainer";
+import ShipEditFormContainer from "./containers/ship/ShipEditFormContainer";
+import ShipFormContainer from "./containers/ship/ShipFormContainer";
+import SingleShipContainer from "./containers/ship/SingleShipContainer";
 
 
 
@@ -25,11 +31,24 @@ class Main extends Component {
           <Navbar />
           <Route exact path="/" component={HomeContainer} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/ships" component={ShipListContainer} />
           <Route exact path="/berths" component={BerthListContainer} />
           <Switch>
           <Route exact path="/passengers" component={PassengerContainer} />
           <Route exact path="/passengers/new" component={PassengerFormContainer}/>
+          <Switch>
+          <Route exact path="/ships" component={ShipListContainer} />
+          <Route exact path="/ships/new" component={ShipFormContainer} />
+          <Route exact path="/ships/edit/:id" render = {(props) =>{
+            const id = props.match.params.id;
+            return <ShipEditFormContainer id = {id} />
+            }}
+          />
+          <Route exact path="/ships/:id" render = {(props) =>{
+            const id = props.match.params.id;
+            return <SingleShipContainer id = {id} />
+            }}
+          />
+          </Switch>
           <Route exact path="/passengers/edit/:id" render = {(props) =>{
             const id = props.match.params.id;
             return <PassengerEditFormContainer id = {id} />
@@ -52,6 +71,15 @@ class Main extends Component {
           <Route exact path="/dockOfficers/:id" render = {(props) =>{
             const id = props.match.params.id;
             return <SingleDockOfficerContainer id = {id} />
+            }}
+          />
+          </Switch>
+          <Switch>
+          <Route exact path="/inspections" component={InspectionContainer} />
+          <Route exact path="/inspections/new" component={InspectionFormContainer} />
+          <Route exact path="/inspections/:id" render = {(props) =>{
+            const id = props.match.params.id;
+            return <SingleInspectionContainer id = {id} />
             }}
           />
           </Switch>
