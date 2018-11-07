@@ -17,7 +17,7 @@ const Ship = (props) => {
   }
 
   if(props.ship.berth){
-    berthstatus = "In Berth " + props.ship.berth;
+    berthstatus = "Docked at Berth " + props.ship.berth;
   } else {
     berthstatus = "Awaiting Arrival";
   }

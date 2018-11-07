@@ -26,6 +26,9 @@ public class Berth {
     @JoinColumn(name = "station_id", nullable = false)
     private Station station;
 
+    @Column(name = "shipName")
+    private String shipName;
+
     public Berth() {
     }
 
@@ -60,6 +63,7 @@ public class Berth {
 
     public void dock(Ship ship){
         setDocked_ship(ship);
+        setShipName(ship.getName());
         ship.setStation(this.station);
         ship.setBerth(this.id);
         ship.setInspected(false);
@@ -68,6 +72,7 @@ public class Berth {
     public String launch(){
         String name = docked_ship.getName();
         if (docked_ship.isInspected()) {
+            this.shipName = null;
             this.docked_ship.setBerth(null);
             this.docked_ship = null;
             return name + " launched!";
@@ -76,4 +81,11 @@ public class Berth {
         }
     }
 
+    public String getShipName() {
+        return shipName;
+    }
+
+    public void setShipName(String shipName) {
+        this.shipName = shipName;
+    }
 }
