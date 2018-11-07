@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Navbar from "./Navbar";
-import About from "./About";
-import Home from "./Home";
-import Ships from "./Ships";
-import Berths from "./Berths";
-import Passengers from "./Passengers";
-import DockOfficers from "./DockOfficers";
+import Navbar from "./components/Navbar";
+import About from "./components/About";
+import Home from "./components/Home";
+import ShipListContainer from "./containers/ShipListContainer";
+import Berths from "./components/Berths";
+import Passengers from "./components/Passengers";
+import DockOfficers from "./components/DockOfficers";
 
 
 class Main extends Component {
@@ -18,7 +18,7 @@ class Main extends Component {
           <Navbar />
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/ships" component={Ships} />
+          <Route path="/ships" component={ShipListContainer} />
           <Route path="/berths" component={Berths} />
           <Route path="/passengers" component={Passengers} />
           <Route path="/dockOfficers" component={DockOfficers} />
