@@ -14,10 +14,12 @@ const Depart = (props) => {
 		})
 
 	return (
-		<ul className="component-list">
-	    {ships}
-	  </ul>
-
+        <div className="departure-list">
+        <h4>Departures:</h4>
+	        <ul className="component-list">
+	            {ships}
+	        </ul>
+        </div>
 	)
 }
  export default Depart;

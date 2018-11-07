@@ -14,10 +14,12 @@ const Arrival = (props) => {
 		})
 
 	return (
-	    <ul className="component-list">
-	        {ships}
-	    </ul>
-
+        <div className="arrival-list">
+        <h4>Arrivals:</h4>
+	        <ul className="component-list">
+	            {ships}
+	        </ul>
+        </div>
 	)
 }
  export default Arrival;
