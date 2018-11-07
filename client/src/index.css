@@ -1,3 +1,55 @@
+@font-face {
+  font-family: 'pokemon-font';
+  src: url('./fonts/pokemon-font.eot'); /* IE9 Compat Modes */
+  src: url('./fonts/pokemon-font.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/pokemon-font.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./fonts/pokemon-font.woff') format('woff'), /* Pretty Modern Browsers */
+       url('./fonts/pokemon-font.ttf')  format('truetype') /* Safari, Android, iOS */
+  /* There is no SVG version of this font due to support being dropped in SVG 2 */
+}
+
+
+body {
+  background-color: darkblue;
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+    font-family: 'pokemon-font', monospace;
+    color: white;
+}
+
+p {
+  font-family: 'pokemon-font', monospace;
+  font-size: 10px;
+}
+h3 {
+  font-family: 'pokemon-font', monospace;
+  font-size: 20px;
+}
+
+h2 {
+  font-family: 'pokemon-font', monospace;
+  font-size: 30px;
+}
+
+h1 {
+    font-family: 'pokemon-font', monospace;
+    font-size: 40px;
+}
+
+.header {
+  text-align: center;
+}
+
+.grid-view {
+  border-style: solid;
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-around;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -6,6 +58,27 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.topnav {
+  background-color: black;
+  overflow: hidden;
+}
+
+Link {
+  text-decoration: none;
+}
+
+.navlink {
+  background-color: black;
+  overflow: hidden;
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-family: 'pokemon-font', monospace;
+  font-size: 20px;
 }
 
 code {
