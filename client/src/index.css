@@ -8,15 +8,20 @@
   /* There is no SVG version of this font due to support being dropped in SVG 2 */
 }
 
-
 body {
-  background-color: darkblue;
-    font-smooth: never;
     -webkit-font-smoothing: none;
     font-family: 'pokemon-font', monospace;
     color: white;
+    margin: 0;
+    background-image: url(./bg.jpg);
+    background-size: 110%; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
+.main{
+  padding: 50px;
+}
 p {
   font-family: 'pokemon-font', monospace;
   font-size: 10px;
@@ -36,31 +41,12 @@ h1 {
     font-size: 40px;
 }
 
-.header {
-  text-align: center;
-}
-
-.grid-view {
-  border-style: solid;
-}
-
-.flex-container {
-  display: flex;
-  flex-flow: row wrap;
-  align-content: space-around;
-}
-
-body {
-  margin: 0;
-  background-image: url(./bg.jpg);
-  background-size: 110%; 
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
 .topnav {
   background-color: black;
   overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 a {

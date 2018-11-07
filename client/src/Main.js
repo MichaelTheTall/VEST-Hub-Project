@@ -28,6 +28,7 @@ class Main extends Component {
       <Router>
         <React.Fragment>
           <Navbar />
+          <div className="main">
           <Route exact path="/" component={HomeContainer} />
           <Route exact path="/about" component={About} />
           <Route exact path="/berths" component={BerthListContainer} />
@@ -82,6 +83,7 @@ class Main extends Component {
             }}
           />
           </Switch>
+          </div>
         </React.Fragment>
       </Router>
     );
