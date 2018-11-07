@@ -3,10 +3,12 @@ import {Link} from 'react-router-dom';
 
 const Ship = (props) => {
 
+  var inspected;
+  
   if(props.ship.inspected){
-    var inspected = "Y";
+    inspected = "Y";
   } else {
-    var inspected = "N";
+    inspected = "N";
   }
 
   if(!props.ship){
