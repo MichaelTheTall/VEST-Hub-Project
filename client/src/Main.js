@@ -10,6 +10,9 @@ import HomeContainer from "./containers/HomeContainer";
 import PassengerFormContainer from "./containers/passenger/PassengerFormContainer";
 import SinglePassengerContainer from "./containers/passenger/SinglePassengerContainer";
 import PassengerEditFormContainer from "./containers/passenger/PassengerEditFormContainer";
+import DockOfficerFormContainer from "./containers/dockofficer/DockOfficerFormContainer";
+import DockOfficerEditFormContainer from "./containers/dockofficer/DockOfficerEditFormContainer";
+import SingleDockOfficerContainer from "./containers/dockofficer/SingleDockOfficerContainer";
 
 
 
@@ -38,7 +41,20 @@ class Main extends Component {
             }}
           />
           </Switch>
+          <Switch>
           <Route exact path="/dockOfficers" component={DockOfficerContainer} />
+          <Route exact path="/dockOfficers/new" component={DockOfficerFormContainer} />
+          <Route exact path="/dockOfficers/edit/:id" render = {(props) =>{
+            const id = props.match.params.id;
+            return <DockOfficerEditFormContainer id = {id} />
+            }}
+          />
+          <Route exact path="/dockOfficers/:id" render = {(props) =>{
+            const id = props.match.params.id;
+            return <SingleDockOfficerContainer id = {id} />
+            }}
+          />
+          </Switch>
         </React.Fragment>
       </Router>
     );

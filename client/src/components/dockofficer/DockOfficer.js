@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const DockOfficer = (props) => {
 
@@ -9,7 +10,8 @@ const DockOfficer = (props) => {
   return (
     <React.Fragment>
         <p>ID: {props.dockofficer.id}</p>
-        <p>Name: {props.dockofficer.name}</p>
+        <p>Name: <Link to = {"/dockOfficers/" + props.dockofficer.id} className="name">
+        {props.dockofficer.name}</Link></p>
       </React.Fragment>
   )
 }
