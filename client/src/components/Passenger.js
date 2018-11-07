@@ -1,19 +1,24 @@
 import React from "react";
-import {Link} from 'react-router-dom';
 
 const Passenger = (props) => {
+
+  var aboard;
 
   if(!props.passenger){
     return null;
   }
 
+  if(props.passenger.shipName){
+    aboard = "Aboard " + props.passenger.shipName;
+  } else {
+    aboard = "Aboard Station";
+  }
+
   return (
     <React.Fragment>
-        {/* <Link to = {"/passengers/" + props.passenger.id} className="name">
-          {props.passenger.name}
-        </Link> */}
-        <p>ID: {props.passenger._links.self.href}</p>
+        <p>ID: {props.passenger.key}</p>
         <p>Name: {props.passenger.name}</p>
+        <p>Status: {aboard}</p>
       </React.Fragment>
   )
 }

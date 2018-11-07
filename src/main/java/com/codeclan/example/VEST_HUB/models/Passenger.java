@@ -16,6 +16,9 @@ public class Passenger {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "ship_name")
+    private String shipName;
+
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "ship_id")
@@ -65,4 +68,11 @@ public class Passenger {
         this.station = station;
     }
 
+    public String getShipName() {
+        return shipName;
+    }
+
+    public void setShipName(String shipName) {
+        this.shipName = shipName;
+    }
 }

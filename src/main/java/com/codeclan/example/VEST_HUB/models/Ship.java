@@ -144,12 +144,14 @@ public class Ship {
     public void addPass(Passenger passenger){
         passengerList.add(passenger);
         passenger.setShip(this);
+        passenger.setShipName(this.name);
         passenger.setStation(null);
     }
 
     public void removePass(Passenger passenger){
         passengerList.remove(passenger);
         passenger.setShip(null);
+        passenger.setShipName(null);
         passenger.setStation(this.station);
     }
 
